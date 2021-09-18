@@ -1,6 +1,16 @@
-<input type="text" #myInput (input) ="inputOn(myInput.value)" [value]="textTask"> 
-<button class="button_add" (click)= "addToTasks('gwfqw')" >Добавить</button>
-<div class="lists" *ngFor ="let task of tasks; let i = index" >
-    {{task}}
-    <button class="remove_button" (click)= "removeThisTask(i)" >Удалить</button>
+<div class ="content">
+    <div class="header">
+        My To-Do App
+    </div>
+    <div class="add_to_list"> 
+        <input  class = "add_input" type="text" #myInput (input) ="inputOn(myInput.value)" [value]="textTask"> 
+        <button class="button_add" (click)= "addToTasks()" >Добавить</button>
+    </div>
+    
+    <div class="lists" *ngFor ="let task of tasks; let i = index" >
+        <div class = "list_task" contenteditable="true">
+            {{task}}
+        </div>
+        <button class="button_remove" (click)= "removeThisTask(i)" >Удалить</button>
+    </div>
 </div>

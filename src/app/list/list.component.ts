@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToTasks(text:string){
+  addToTasks(){
     this.tasks.push(this.textTask);
     this.textTask=""
   }

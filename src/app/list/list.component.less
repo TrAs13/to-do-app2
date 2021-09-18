@@ -1,0 +1,81 @@
+.content{
+    margin: auto;
+    text-align: center;
+    background-color: #2d3436;
+    width: 800px;  
+    border-radius: 10px;
+    padding-bottom: 8px;
+
+    .header{
+        font-size: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: rgb(255, 255, 255);
+    } 
+
+    .add_to_list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .add_input{
+            padding: .7em 1.5em; 
+            width: 60%;
+            border-radius:10px;
+            margin-right: 1em;
+        }
+
+        .button_add{
+            color: rgb(255, 255, 255); 
+            user-select: none; 
+            padding: .7em 1.5em; 
+            outline: none; 
+            background-color: transparent;
+            border-radius: 10px;
+            border-color: rgb(255, 255, 255);
+        }
+
+        .button_add:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(218, 193, 193);
+            border-color: rgb(0, 0, 0);
+            outline: 0;
+        }
+    }
+    
+    .lists{
+        margin: auto;
+        max-width: 77.5%;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgb(178, 221, 241);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+     
+        .list_task{
+            padding:0.5em;
+            width: 70%;
+        }
+
+        .button_remove{
+            color: rgb(0, 0, 0); 
+            user-select: none; 
+            padding: .7em 1.5em; 
+            outline: none; 
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: darkgoldenrod;
+        }
+
+        .button_remove:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(218, 193, 193);
+            border-color: rgb(0, 0, 0);
+            outline: 0;
+        }
+    }
+}
