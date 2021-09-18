@@ -1,0 +1,6 @@
+<input type="text" #myInput (input) ="inputOn(myInput.value)" [value]="textTask"> 
+<button class="button_add" (click)= "addToTasks('gwfqw')" >Добавить</button>
+<div class="lists" *ngFor ="let task of tasks; let i = index" >
+    {{task}}
+    <button class="remove_button" (click)= "removeThisTask(i)" >Удалить</button>
+</div>
