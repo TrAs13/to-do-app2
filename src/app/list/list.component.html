@@ -7,11 +7,11 @@
         <button class="button-add" (click)="addToTasks()">Добавить</button>
     </div>
 
-    <div class="app-list-item" *ngFor="let task of tasks; let i = index" [class.list-true]="taskTrue[i]===true">
+    <div class="app-list-item" *ngFor="let task of tasks; let i = index" [class.list-true]="taskTrue[i]==='true'">
         <div class="list-task" contenteditable="true">
             {{task}}
         </div>
         <button class="button-remove" (click)="removeThisTask(i)">Удалить</button>
-        <button class="button-complite" (click)="taskTrue[i]=!taskTrue[i]">Выполнил</button>
+        <button class="button-complite" (click)="compliteListItem(i)">Выполнил</button>
     </div>
 </div>

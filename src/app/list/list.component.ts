@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -8,13 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListComponent {
 
   public textTask: string = "";
-  public taskTrue: boolean[] = [];
-  public tasks: string[] = [];
+  public taskTrue: string[] = localStorage.getItem("taskTrue")?.split(" ") || [];
+  public tasks: string[] = localStorage.getItem("Tasks")?.split(" ") || [];
+
 
   public addToTasks() {
     if (this.textTask.length > 0) {
       this.tasks.push(this.textTask);
-      this.taskTrue.push(false);
+      this.taskTrue.push('false');
+      localStorage.setItem("Tasks", this.tasks.join(" "));
+      localStorage.setItem("taskTrue", this.taskTrue.join(" "));
       this.textTask = "";
     }
     else {
@@ -24,7 +27,17 @@ export class ListComponent {
 
   public removeThisTask(index: number) {
     this.tasks.splice(index, 1);
-    console.log(this.taskTrue[index])
     this.taskTrue.splice(index, 1);
+    localStorage.setItem("Tasks", this.tasks.join(" "));
+    localStorage.setItem("taskTrue", this.taskTrue.join(" "));
+  }
+
+  public compliteListItem(index: number) {
+    if (this.taskTrue[index] === "false") {
+      this.taskTrue[index] = "true";
+    } else {
+      this.taskTrue[index] = "false"
+    }
+    localStorage.setItem("taskTrue", this.taskTrue.join(" "));
   }
 }
