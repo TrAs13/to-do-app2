@@ -13,19 +13,19 @@
         color: rgb(255, 255, 255);
     } 
 
-    .add_to_list{
+    .app-create-list-item{
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .add_input{
+        .add-input{
             padding: .7em 1.5em; 
             width: 60%;
             border-radius:10px;
             margin-right: 1em;
         }
 
-        .button_add{
+        .button-add{
             color: rgb(255, 255, 255); 
             user-select: none; 
             padding: .7em 1.5em; 
@@ -35,7 +35,7 @@
             border-color: rgb(255, 255, 255);
         }
 
-        .button_add:hover {
+        .button-add:hover {
             color: rgb(0, 0, 0);
             background-color: rgb(218, 193, 193);
             border-color: rgb(0, 0, 0);
@@ -43,25 +43,25 @@
         }
     }
     
-    .lists{
+    .app-list-item{
         margin: auto;
         max-width: 77.5%;
         padding: 10px;
         margin-bottom: 20px;
         margin-top: 20px;
         border-radius: 10px;
-        background-color: rgb(178, 221, 241);
         display: flex;
         justify-content: space-between;
         align-items: center;
         text-align: left;
-     
-        .list_task{
+        background-color: rgb(178, 221, 241);   
+        
+        .list-task{
             padding:0.5em;
-            width: 70%;
+            width: 60%;
         }
 
-        .button_remove{
+        .button-remove{
             color: rgb(0, 0, 0); 
             user-select: none; 
             padding: .7em 1.5em; 
@@ -77,5 +77,26 @@
             border-color: rgb(0, 0, 0);
             outline: 0;
         }
+
+        .button-complite{
+            color: rgb(0, 0, 0); 
+            user-select: none; 
+            padding: .7em 1.5em; 
+            outline: none; 
+            border-radius: 10px;
+            background-color: transparent;
+            border-color: darkgoldenrod;
+        }
+
+        .button-complite:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(218, 193, 193);
+            border-color: rgb(0, 0, 0);
+            outline: 0;
+        }
     }
+            
+    .list-true{
+        background-color: rgb(143, 253, 0);
+    }    
 }

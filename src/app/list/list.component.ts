@@ -5,26 +5,26 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.less']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
-  constructor() { }
-  textTask:string= "";
+  public textTask: string = "";
+  public taskTrue: boolean[] = [];
+  public tasks: string[] = [];
 
-  tasks:string[] =new Array();
-
-  ngOnInit(): void {
+  public addToTasks() {
+    if (this.textTask.length > 0) {
+      this.tasks.push(this.textTask);
+      this.taskTrue.push(false);
+      this.textTask = "";
+    }
+    else {
+      alert("Введите свое задание");
+    }
   }
 
-  addToTasks(){
-    this.tasks.push(this.textTask);
-    this.textTask=""
-  }
-
-  removeThisTask(index:number){
-    this.tasks.splice(index,1);
-  }
-
-  inputOn(value:string){
-    this.textTask =value;
+  public removeThisTask(index: number) {
+    this.tasks.splice(index, 1);
+    console.log(this.taskTrue[index])
+    this.taskTrue.splice(index, 1);
   }
 }
